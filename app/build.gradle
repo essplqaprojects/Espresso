@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28"
+
+    defaultConfig {
+        applicationId "com.esspl.cucumberespressodemo"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testApplicationId "com.esspl.cucumberespressodemo.test"
+        testInstrumentationRunner "com.esspl.cucumberespressodemo.test.Instrumentation"
+    }
+
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+	compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.6', ext: 'pom'
+	testCompile 'info.cukes:cucumber-java:1.2.4'
+    testCompile 'info.cukes:cucumber-junit:1.2.4'
+    testCompile 'junit:junit:4.12'
+   // compile 'com.android.support:appcompat-v7:28.0.0'
+  //  'androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+  //  androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+   // androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'info.cukes:cucumber-android:1.2.0@jar'
+    androidTestCompile 'info.cukes:cucumber-picocontainer:1.2.0'
+    //androidTestImplementation 'junit:junit:4.12'
+   // implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // androidTestCompile('com.android.support.test.espresso:espresso-core:3.1.0', {
+       // exclude group: 'com.android.support', module: 'support-annotations'})
+   // compile 'com.android.support:appcompat-v7:28.0.0'
+    // compile 'com.android.support.constraint:constraint-layout:1.0.2'
+  //  compile 'com.android.support:design:28.0.0'
+   // compile 'com.android.support.test:rules:1.0.2'
+   // compile "androidx.navigation:navigation-fragment-ktx:2.2.2"
+   // compile "androidx.navigation:navigation-ui-ktx:2.2.2"
+    //compile 'androidx.test.platform.app.InstrumentationRegistry'
+   // compile 'androidx.test:core:1.0.0-beta02'
+    //compile 'androidx.test:core:1.1.0'
+   // compile 'androidx.test.ext:junit:1.1.0'
+   // androidTestCompile 'info.cukes:cucumber-android:1.2.0@jar'
+   // androidTestCompile 'info.cukes:cucumber-picocontainer:1.2.0'
+    //  compile "androidx.navigation:navigation-ui-ktx:$nav_version"
+    //  compile 'androidx.test.platform.app.InstrumentationRegistry'
+    // compile 'androidx.test.ext.junit.runners.AndroidJUnit4''
+    // testCompile 'junit:junit:4.12'
+}
