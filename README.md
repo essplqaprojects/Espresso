@@ -60,6 +60,7 @@ Install Plugin: Android Studio > Preferences > Plugins > Search "Gherkin" > Inst
         }
     }
     ```
+    
 
 4. Add dependencies
 
