@@ -8,12 +8,12 @@ BDD's behavior text is written in a business-readable domain-specific language.
 It aims to communicate better between non-tech to tech over Software trueness and quality.  
 The readable behavior also serves as documentation.
 
-~~As of 1/27/2015, there are not good cucumber support on Android Studio.  
+~~As of now, there are not good cucumber support on Android Studio.  
 It would be a little bit of pain that you need to manually translate behavior into step definition annotation.
 Hopefully, Gherkin plugin (Cucumber plugin) (https://plugins.jetbrains.com/plugin/7211?pr=androidstudio) is fixed soon to work with Android Studio 1.0.2.
-If Gherkin plugin starts to work with Android Studio, it should make BDD more fun.~~
+If Gherkin plugin starts to work with Android Studio, it should make BDD more effective.~~
 
-###UPDATE (12/08/2015): 
+###UPDATE (12/06/2020): 
 Gherkin plugin is working with Android Studio 2.0. Manual translation is still required but .feature file has pretty syntax highlighting and any invalid cucumber syntax will be flagged with an error.
 
 Install Plugin: Android Studio > Preferences > Plugins > Search "Gherkin" > Install & Restart Android Studio
@@ -47,8 +47,8 @@ Install Plugin: Android Studio > Preferences > Plugins > Search "Gherkin" > Inst
 2. Application ID / Runner setup in app/build.gradle
 
     ```
-    testApplicationId "com.emmasuzuki.cucumberespressodemo.test"
-    testInstrumentationRunner "com.emmasuzuki.cucumberespressodemo.test.Instrumentation"
+    testApplicationId "com.esspl.cucumberespressodemo.test"
+    testInstrumentationRunner "com.esspl.cucumberespressodemo.test.Instrumentation"
     ```
 
 3. Set assets directory for feature files in app/build.gradle
@@ -142,5 +142,34 @@ On Android Studio, take the following steps:
 
 Write code and run test again.  Observe the tests pass.
 
+##Components and its purpose
+```
+Go to app --> src
+ 1. androidTest
+ 2. main
+ 
+ In androidTest we get 2 package
+ 	1.1 assets
+ 	1.2 java
+ 	
+	 	1.1 assets: In assets we get a folder like features where we kept feature files
+	 	1.2 java: Inside java there is a test package in which we write our test scripts
+	 	
+ In main we get 2 packages
+ 	2.1 java
+ 	2.2 res 
+ 	
+ 		2.1 java :Here the development team developed their code for their activity which we                       					  are supposed to test in androidTest by our script
+ 		2.2 res :Here devloper store all his required xml files, png or properties file if any
+```
+
+##Dependency
+``` build.gradle
+   Here we store all the dependency that are required for our project
+   
+	 settings.gradle
+	Here we can import any project/folder if required in our project```
+
+
 ##Any Questions ? 
-Please feel free to contact me at emma11suzuki@gmail.com
+Please feel free to contact me at debasis.mohanty01@esspl.com
